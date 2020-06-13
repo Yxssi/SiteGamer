@@ -45,19 +45,22 @@
                                     </th>
                                     <td class="border-0 align-middle"><strong>{{ getPrice($product->subtotal()) }}</strong></td>
                                     <td class="border-0 align-middle">
-                                        <select class="custom-select" name="qty" id="qty" data-id="{{ $product->rowId }}" data-stock="{{ $product->model->stock }}">
+
+
+                                        <select class="custom-select" name="qty" id="qty" data-id="{{ $product->rowId }}" data-stock="{{ $product->model->stock }}" >
                                             @for ($i = 1; $i <= 5; $i++)
                                                 <option value="{{ $i }}" {{ $product->qty == $i ? 'selected' : ''}}>
                                                     {{ $i }}
                                                 </option>
                                             @endfor
                                         </select>
+
                                     </td>
                                     <td class="border-0 align-middle">
                                         <form action="{{ route('cart.destroy', $product->rowId) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -144,6 +147,8 @@
 
 @endsection
 
+
+{{--
 @section('extra-js')
 <script>
     var qty = document.querySelectorAll('#qty');
@@ -175,3 +180,5 @@
     });
 </script>
 @endsection
+
+--}}

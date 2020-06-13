@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel 6 E-Commerce
+                   Games Center
                 </div>
 
                 <div class="links">
