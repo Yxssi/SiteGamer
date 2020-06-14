@@ -22,14 +22,10 @@
         @endif
       </div>
       <div class="col-auto d-none d-lg-block">
-        <img src="{{ asset('storage/' . $product->image) }}" id="mainImage">
-        <div class="mt-2">
-          @if ($product->images)
-            <img src="{{ asset('storage/' . $product->image) }}" class="img-thumbnail" width="50">
-            @foreach (json_decode($product->images, true) as $image)
-              <img src="{{ asset('storage/' . $image) }}" width="50" class="img-thumbnail">
-            @endforeach
-          @endif
+          <img src="{{ asset($product->image) }}" id="mainImage" width="200" height="200" alt="Pochette du jeu">
+          <div class="mt-2">
+
+
         </div>
       </div>
     </div>
@@ -37,6 +33,8 @@
 @endsection
 
 @section('extra-js')
+
+  {{--
   <script>
     var mainImage = document.querySelector('#mainImage');
     var thumbnails = document.querySelectorAll('.img-thumbnail');
@@ -47,4 +45,6 @@
       mainImage.src = this.src;
     }
   </script>
+
+  --}}
 @endsection
