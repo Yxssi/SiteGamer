@@ -16,7 +16,7 @@
           <a href="{{ route('products.show', $product->slug) }}" class="stretched-link btn btn-info"><i class="fa fa-location-arrow" aria-hidden="true"></i> Consulter le produit</a>
         </div>
         <div class="col-auto d-none d-lg-block">
-          <img src="{{ asset('storage/' . $product->image) }}" alt="">
+          <img src="{{ asset($product->image) }}" id="mainImage" width="200" height="200" alt="Pochette du jeu">
         </div>
       </div>
     </div>
