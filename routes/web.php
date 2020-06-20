@@ -12,6 +12,10 @@
 */
 
 Route::get('/', function () {
+
+    // PDF
+
+
     return view('welcome');
 });
 
@@ -30,6 +34,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/coupon', 'CartController@destroyCoupon')->name('cart.destroy.coupon');
 });
 
+/*  PDF Routes */
+Route::get('pdf', function () {
+    return view('pdf/index');
+});
+
 /* Checkout Routes */
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/paiement', 'CheckoutController@index')->name('checkout.index');
@@ -45,3 +54,5 @@ Route::group(['prefix' => 'admin'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+

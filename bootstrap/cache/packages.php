@@ -11,6 +11,29 @@
       'AsyncWidget' => 'Arrilot\\Widgets\\AsyncFacade',
     ),
   ),
+  'barryvdh/laravel-dompdf' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Barryvdh\\DomPDF\\ServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'PDF' => 'Barryvdh\\DomPDF\\Facade',
+    ),
+  ),
+  'barryvdh/laravel-snappy' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Barryvdh\\Snappy\\ServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'PDF' => 'Barryvdh\\Snappy\\Facades\\SnappyPdf',
+      'SnappyImage' => 'Barryvdh\\Snappy\\Facades\\SnappyImage',
+    ),
+  ),
   'facade/ignition' => 
   array (
     'providers' => 
@@ -84,6 +107,17 @@
     'providers' => 
     array (
       0 => 'Laravel\\Ui\\UiServiceProvider',
+    ),
+  ),
+  'laraveldaily/laravel-invoices' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'LaravelDaily\\Invoices\\InvoiceServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Invoice' => 'LaravelDaily\\Invoices\\Facades\\Invoice',
     ),
   ),
   'nesbot/carbon' => 
