@@ -94,6 +94,7 @@
                 </div>
 
                 <div class="links">
+
                     <a href="{{ route('products.index') }}">Visiter la boutique!</a>
                 </div>
             </div>
