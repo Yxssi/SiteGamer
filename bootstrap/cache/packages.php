@@ -142,4 +142,11 @@
       1 => 'TCG\\Voyager\\Providers\\VoyagerDummyServiceProvider',
     ),
   ),
+  'willvincent/laravel-rateable' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'willvincent\\Rateable\\RateableServiceProvider',
+    ),
+  ),
 );

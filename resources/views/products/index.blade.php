@@ -3,6 +3,7 @@
 @section('content')
 
   @foreach ($products as $product)
+
     <div class="col-md-6">
       <div class="row no-gutters border rounded d-flex align-items-center flex-md-row mb-4 shadow-sm position-relative">
         <div class="col p-3 d-flex flex-column position-static">
@@ -12,6 +13,7 @@
                 {{ $category->name }}{{ $loop->last ? '' : ', '}}
             @endforeach
           </small>
+
           <h5 class="mb-0">{{ $product->title }}</h5>
           <p class="mb-3 text-muted">{{ $product->subtitle }}</p>
 
@@ -21,6 +23,10 @@
         <div class="col-auto d-none d-lg-block">
           <img src="{{ asset($product->image) }}" id="mainImage" width="200" height="200" alt="Pochette du jeu">
         </div>
+
+
+        </div>
+
       </div>
     </div>
   @endforeach
