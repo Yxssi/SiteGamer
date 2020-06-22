@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-  <a href="/users">Utilisateurs</a>
+
   @foreach ($products as $product)
     <div class="col-md-6">
       <div class="row no-gutters border rounded d-flex align-items-center flex-md-row mb-4 shadow-sm position-relative">
