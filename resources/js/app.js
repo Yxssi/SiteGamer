@@ -30,3 +30,34 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+
+
+
+var qty = document.querySelectorAll('#qty');
+Array.from(qty).forEach((element) => {
+    element.addEventListener('change', function changeValeur () {
+        var rowId = element.getAttribute('data-id');
+        var stock = element.getAttribute('data-stock');
+        var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        fetch(`/panier/${rowId}`,
+            {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json, text-plain, */*",
+                    "X-Requested-With": "XMLHttpRequest",
+                    "X-CSRF-TOKEN": token
+                },
+                method: 'patch',
+                body: JSON.stringify({
+                    qty: this.value,
+                    stock: stock
+                })
+            }).then((data) => {
+            console.log(data);
+            location.reload();
+        }).catch((error) => {
+            console.log(error);
+        });
+    });
+});

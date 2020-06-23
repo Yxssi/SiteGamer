@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Application E-Commerce développée avec le Framework Laravel 6 par Ludovic Guénet">
-    <meta name="author" content="Ludovic Guénet">
+    <meta name="description" content="">
+    <meta name="author" content="Tanguy  & Yessi">
     @yield('extra-meta')
 
-    <title>Laravel 6 E-Commerce</title>
+    <title>Games Center</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
