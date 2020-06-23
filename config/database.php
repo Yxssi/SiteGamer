@@ -58,14 +58,16 @@ return [
             'engine' => null,
         ],
 
+
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('postgres://msfcqfwgandjva:1ab448eb20656cfa9b86750504208bc111ee522de52fb4bbcbdebf9197c4cea8@ec2-54-217-204-34.eu-west-1.compute.amazonaws.com:5432/d54gs4o5nn1pgn'),
-            'host' => env('ec2-54-217-204-34.eu-west-1.compute.amazonaws.com', '127.0.0.1'),
+            'host' => env('DB_HOST', 'ec2-54-217-204-34.eu-west-1.compute.amazonaws.com'),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('d54gs4o5nn1pgn', 'forge'),
-            'username' => env('msfcqfwgandjva', 'forge'),
-            'password' => env('1ab448eb20656cfa9b86750504208bc111ee522de52fb4bbcbdebf9197c4cea8', ''),
+            'database' => env('DB_DATABASE', 'd54gs4o5nn1pgn'),
+            'username' => env('DB_USERNAME', 'msfcqfwgandjva'),
+            'password' => env('DB_PASSWORD', '1ab448eb20656cfa9b86750504208bc111ee522de52fb4bbcbdebf9197c4cea8'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
