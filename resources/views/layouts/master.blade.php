@@ -11,6 +11,13 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     @yield('extra-script')
 
@@ -19,35 +26,53 @@
     <!-- FontAwesome 4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Ecommerce App CSS -->
-    <link rel="stylesheet" href="{{ asset('css/ecommerce.css') }}">
+
   </head>
 
   <body>
 <div>
   <div class="container">
     <header class="blog-header pt-3">
-      <div class="row flex-nowrap justify-content-between align-items-center">
-        <div class="col-4 pt-1">
-          <a class="text-muted" href="{{ route('cart.index') }}">Panier <span class="badge badge-pill badge-info text-white">{{ Cart::count() }}</span></a>
-        </div>
-        <div class="col-4 text-center">
-          <a class="blog-header-logo" style="color: #17a2b8 !important;" href="{{ route('products.index') }}"><img src="{{ asset('img/logo.png') }}" width="200" alt=""></a>
-        </div>
-        <div class="col-4 d-flex justify-content-end align-items-center">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand"  href="{{route('products.index')}}">GAMES CENTER</a>;
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{route('products.index')}}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{route('cart.index')}}">Panier</a>
+            </li>
+
+              @foreach (App\Category::all() as $category)
+
+                <a class="nav-link" href="{{ route('products.index', ['categorie' => $category->slug]) }}">{{ $category->name }}</a>
+
+              @endforeach
+
+
+
+          </ul>
           @include('partials.search')
           @include('partials.auth')
+
+
+
+
+
+
         </div>
-      </div>
+      </nav>
     </header>
 
-  <div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-      @foreach (App\Category::all() as $category)
-      <a class="p-2 text-muted" href="{{ route('products.index', ['categorie' => $category->slug]) }}">{{ $category->name }}</a>
-      @endforeach
-    </nav>
-  </div>
+    <style>
+      header{
+        margin-bottom: 20%;
+      }
+    </style>
 
   @if (session('success'))
       <div class="alert alert-success">
@@ -197,13 +222,8 @@
 
 </main><!-- /.container --> --}}
 
-<footer class="blog-footer">
-  <p>
-  🛒 Site E-Commerce Laravel par Tanguy & Yessi
-  </p>
-  <p>
-    <a href="#">Revenir en haut</a>
-  </p>
+
+
 </footer>
 </div>
 @yield('extra-js')

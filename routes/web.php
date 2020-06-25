@@ -24,6 +24,12 @@ Route::get('/boutique', 'ProductController@index')->name('products.index');
 Route::get('/boutique/{slug}', 'ProductController@show')->name('products.show');
 Route::get('/search', 'ProductController@search')->name('products.search');
 
+/* Review Routes */
+Route::get('/reviews/{id}/create', 'ReviewController@create')->name('reviews.create');
+Route::post('/reviews/store', 'ReviewController@store')->name('reviews.store');
+
+
+
 /* Cart Routes */
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/panier', 'CartController@index')->name('cart.index');
@@ -55,4 +61,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Users routes
 
+Route::resource('users', 'UserController');
+Route::resource('reviews', 'ReviewController');
+
+Route::get('/users/create', 'UserController@create')->name('users.create');
+Route::get('/register', 'UserController@create')->name('users.create');
+Route::get('/users', 'UserController@index')->name('users.index');
+
+Route::post('/users/store', 'UserController@store')->name('users.store');
+Route::get('/users/show', 'UserController@show')->name('users.show');
