@@ -18,6 +18,19 @@ class Review extends Model
      */
 
 
+    public function index () {
+
+
+
+}
+
+    public function Game()
+    {
+        return $this->belongsTo(Product::class, 'Product_id');
+
+    }
+
+
     /**
      * The belongs to Relationship
      *
