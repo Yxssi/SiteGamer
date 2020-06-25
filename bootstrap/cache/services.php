@@ -43,10 +43,11 @@
     39 => 'willvincent\\Rateable\\RateableServiceProvider',
     40 => 'Barryvdh\\Snappy\\ServiceProvider',
     41 => 'LaravelDaily\\Invoices\\InvoiceServiceProvider',
-    42 => 'App\\Providers\\AppServiceProvider',
-    43 => 'App\\Providers\\AuthServiceProvider',
-    44 => 'App\\Providers\\EventServiceProvider',
-    45 => 'App\\Providers\\RouteServiceProvider',
+    42 => 'willvincent\\Rateable\\RateableServiceProvider',
+    43 => 'App\\Providers\\AppServiceProvider',
+    44 => 'App\\Providers\\AuthServiceProvider',
+    45 => 'App\\Providers\\EventServiceProvider',
+    46 => 'App\\Providers\\RouteServiceProvider',
   ),
   'eager' => 
   array (
@@ -79,10 +80,11 @@
     26 => 'willvincent\\Rateable\\RateableServiceProvider',
     27 => 'Barryvdh\\Snappy\\ServiceProvider',
     28 => 'LaravelDaily\\Invoices\\InvoiceServiceProvider',
-    29 => 'App\\Providers\\AppServiceProvider',
-    30 => 'App\\Providers\\AuthServiceProvider',
-    31 => 'App\\Providers\\EventServiceProvider',
-    32 => 'App\\Providers\\RouteServiceProvider',
+    29 => 'willvincent\\Rateable\\RateableServiceProvider',
+    30 => 'App\\Providers\\AppServiceProvider',
+    31 => 'App\\Providers\\AuthServiceProvider',
+    32 => 'App\\Providers\\EventServiceProvider',
+    33 => 'App\\Providers\\RouteServiceProvider',
   ),
   'deferred' => 
   array (

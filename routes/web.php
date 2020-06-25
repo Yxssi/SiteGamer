@@ -25,6 +25,10 @@ Route::get('/boutique/{slug}', 'ProductController@show')->name('products.show');
 Route::get('/search', 'ProductController@search')->name('products.search');
 
 /* Review Routes */
+Route::get('/reviews/{id}/create', 'ReviewController@create')->name('reviews.create');
+Route::post('/reviews/store', 'ReviewController@store')->name('reviews.store');
+
+
 
 /* Cart Routes */
 Route::group(['middleware' => ['auth']], function () {
