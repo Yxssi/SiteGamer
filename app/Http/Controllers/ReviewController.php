@@ -21,9 +21,11 @@ public function index (){
         {
             $comment = new Comment();
             $comment->user_id = \Auth::user()->id;
+
             $comment->product_id = $request->get('jeu');
             $comment->title = $request->get('title');
             $comment->author = Auth::user()->name;
+
 
             //$comment->note = $request->get('note');
             $comment->body = $request->get('comment');
@@ -43,6 +45,8 @@ public function index (){
         return view('reviews.create', compact('game'), compact('comment'));
 
     }
+
+
 
     public function product()
     {

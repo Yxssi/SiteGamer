@@ -28,6 +28,8 @@ Route::get('/search', 'ProductController@search')->name('products.search');
 Route::get('/reviews/{id}/create', 'ReviewController@create')->name('reviews.create');
 Route::post('/reviews/store', 'ReviewController@store')->name('reviews.store');
 
+
+
 /* Cart Routes */
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/panier', 'CartController@index')->name('cart.index');

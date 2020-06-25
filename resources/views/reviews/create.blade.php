@@ -6,7 +6,20 @@
 <form method="POST" action="{{ route('reviews.store') }}">
     @csrf
     <input type="hidden" id="jeu" name="jeu" class="form-control" value="{{ $comment->product_id }}">
-    <input id="jeu" name="jeu" class="form-control" value="{{ $game->id }}">
+
+    <h2></h2>
+
+
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Rédiger un avis pour le jeu ci-dessous :</span>
+        </div>
+
+              <input id="jeu" name="jeu" class="form-control" value="{{ $game->title }}">
+
+    </div>
+
 
 
     <div class="form-group">
@@ -29,8 +42,9 @@
     </div>
 
     <div class="bouton">
-        <button type="submit" class="btn">Submit</button>
-        <button type="submit" class="btn">Valider</button>
+
+
+        <button type="submit" class="btn btn-success">Valider</button>
     </div>
 </form>
     </div>

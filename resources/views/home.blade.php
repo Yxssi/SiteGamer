@@ -21,10 +21,10 @@
                             </div>
                             <div class="card-body">
                                 <h6>Liste des produits</h6>
-                                @foreach (unserialize($order->products) as $product)
-                                    <div>Nom du produit: {{ $product[0] }}</div>
-                                    <div>Prix: {{ getPrice($product[1]) }}</div>
-                                    <div>Quantité: {{ $product[2] }}</div>
+                                @foreach ($order->products as $product)
+                                    <div>Nom du produit: {{ $product->name }}</div>
+                                    <div>Prix: {{ getPrice($product->price) }}</div>
+
                                 @endforeach
                             </div>
                         </div>
