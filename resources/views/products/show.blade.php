@@ -57,14 +57,12 @@
           <p>
           <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top"
                   data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-            Popover on top
+           Aucun avis disponible
           </button>
 
          </p>
 
-          <footer class="blockquote-footer">
-            <strong>NAME</strong>
-            <cite title="Source Title">Source Title</cite></footer>
+
         </blockquote>
 
       </div>

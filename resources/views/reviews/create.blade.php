@@ -16,29 +16,41 @@
             <span class="input-group-text">Rédiger un avis pour le jeu ci-dessous :</span>
         </div>
 
-              <input id="jeu" name="jeu" class="form-control" value="{{ $game->title }}">
+              <input id="game" name="game" class="form-control" value="{{ $game->title }}">
+        <input type="hidden" id="g" name="jeu" class="form-control" value="{{ $game->id }}">
 
     </div>
 
 
+    <style>
+        .form-group{
+            margin-top: 5%;
+        }
+    </style>
 
     <div class="form-group">
 
 
         <div class="input-group">
 
-            <label for="avis">Title</label>
+
+            <p class="text-justify">Titre</p>
+        </div>
+        <div class="input-group">
             <input id="title"  name="title" class="form-control" value="{{ $comment->title }}">
+        </div>
 
 
 
 
         </div>
         <div class="input-group">
-            <label for="avis">Avis</label>
-            <input type="text" class="form-control" name="avis" id="avis">
-
+            <p class="text-justify">Avis</p>
         </div>
+    <div class="input-group">
+            <input id="avis"  name="avis" class="form-control" value="{{ $comment->body }}">
+
+
     </div>
 
     <div class="bouton">

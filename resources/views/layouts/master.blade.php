@@ -26,35 +26,53 @@
     <!-- FontAwesome 4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Ecommerce App CSS -->
-    <link rel="stylesheet" href="{{ asset('css/ecommerce.css') }}">
+
   </head>
 
   <body>
 <div>
   <div class="container">
     <header class="blog-header pt-3">
-      <div class="row flex-nowrap justify-content-between align-items-center">
-        <div class="col-4 pt-1">
-          <a class="text-muted" href="{{ route('cart.index') }}">Panier <span class="badge badge-pill badge-info text-white">{{ Cart::count() }}</span></a>
-        </div>
-        <div class="col-4 text-center">
-          <a class="blog-header-logo" style="color: #17a2b8 !important;" href="{{ route('products.index') }}"><img src="{{ asset('img/logo.png') }}" width="200" alt=""></a>
-        </div>
-        <div class="col-4 d-flex justify-content-end align-items-center">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand"  href="{{route('products.index')}}">GAMES CENTER</a>;
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{route('products.index')}}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{route('cart.index')}}">Panier</a>
+            </li>
+
+              @foreach (App\Category::all() as $category)
+
+                <a class="nav-link" href="{{ route('products.index', ['categorie' => $category->slug]) }}">{{ $category->name }}</a>
+
+              @endforeach
+
+
+
+          </ul>
           @include('partials.search')
           @include('partials.auth')
+
+
+
+
+
+
         </div>
-      </div>
+      </nav>
     </header>
 
-  <div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-      @foreach (App\Category::all() as $category)
-      <a class="p-2 text-muted" href="{{ route('products.index', ['categorie' => $category->slug]) }}">{{ $category->name }}</a>
-      @endforeach
-    </nav>
-  </div>
+    <style>
+      header{
+        margin-bottom: 20%;
+      }
+    </style>
 
   @if (session('success'))
       <div class="alert alert-success">
@@ -204,13 +222,8 @@
 
 </main><!-- /.container --> --}}
 
-<footer class="blog-footer">
-  <p>
-  🛒 Site E-Commerce Laravel par Tanguy & Yessi
-  </p>
-  <p>
-    <a href="#">Revenir en haut</a>
-  </p>
+
+
 </footer>
 </div>
 @yield('extra-js')
